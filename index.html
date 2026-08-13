@@ -1,0 +1,2134 @@
+<mjml>
+  <mj-head>
+    <mj-title>Juniper's Tea Room — Creator Social Journey</mj-title>
+
+    <mj-preview>
+      Your complete Creator Social journey — confirmation, reminder and thank-you.
+    </mj-preview>
+
+    <mj-attributes>
+      <mj-all font-family="Georgia, 'Times New Roman', serif" />
+
+      <mj-text
+        font-size="16px"
+        line-height="26px"
+        color="#33443d"
+      />
+
+      <mj-section
+        background-color="#ffffff"
+        padding="0 25px"
+      />
+
+      <mj-button
+        font-family="Arial, Helvetica, sans-serif"
+        font-size="14px"
+        font-weight="700"
+        background-color="#2d4a3e"
+        color="#ffffff"
+        border-radius="10px"
+        inner-padding="15px 30px"
+      />
+    </mj-attributes>
+
+
+    <!-- ===================================================
+         GLOBAL CSS / EFFECTS
+         =================================================== -->
+
+    <mj-style>
+      body {
+        background:
+          radial-gradient(circle at 20% 10%, #f7fbf8 0, transparent 28%),
+          radial-gradient(circle at 80% 20%, #dbe9e1 0, transparent 25%),
+          linear-gradient(135deg, #e8efeb, #dce6e0) !important;
+      }
+
+      .page-shell {
+        position: relative;
+      }
+
+      /* ---------------------------------------
+         AURORA
+         --------------------------------------- */
+
+      .aurora {
+        position: relative;
+        overflow: hidden;
+      }
+
+      .aurora:before,
+      .aurora:after {
+        content: "";
+        position: absolute;
+        width: 320px;
+        height: 320px;
+        border-radius: 50%;
+        filter: blur(70px);
+        opacity: .22;
+        pointer-events: none;
+      }
+
+      .aurora:before {
+        top: -130px;
+        left: -120px;
+        background: #83b89e;
+        animation: auroraOne 8s ease-in-out infinite alternate;
+      }
+
+      .aurora:after {
+        right: -130px;
+        bottom: -150px;
+        background: #d7b977;
+        animation: auroraTwo 10s ease-in-out infinite alternate;
+      }
+
+      @keyframes auroraOne {
+        0% {
+          transform: translate(0,0) scale(1);
+        }
+
+        100% {
+          transform: translate(80px,40px) scale(1.2);
+        }
+      }
+
+      @keyframes auroraTwo {
+        0% {
+          transform: translate(0,0) scale(.9);
+        }
+
+        100% {
+          transform: translate(-80px,-50px) scale(1.15);
+        }
+      }
+
+
+      /* ---------------------------------------
+         BRAND
+         --------------------------------------- */
+
+      .brand-title {
+        text-shadow:
+          0 1px 0 rgba(255,255,255,.8),
+          0 9px 25px rgba(45,74,62,.11);
+      }
+
+      .brand-dot {
+        display: inline-block;
+        color: #97b8a7;
+        animation: dotPulse 2.4s ease-in-out infinite;
+      }
+
+      @keyframes dotPulse {
+        0%, 100% {
+          opacity: .4;
+          transform: scale(.8);
+        }
+
+        50% {
+          opacity: 1;
+          transform: scale(1.18);
+        }
+      }
+
+
+      /* ---------------------------------------
+         EMAIL CARD
+         --------------------------------------- */
+
+      .email-card {
+        position: relative;
+        overflow: hidden;
+        border-radius: 24px !important;
+
+        box-shadow:
+          0 30px 80px rgba(31,50,41,.13),
+          0 8px 25px rgba(31,50,41,.07);
+
+        transition:
+          transform .45s cubic-bezier(.2,.8,.2,1),
+          box-shadow .45s ease;
+      }
+
+      .email-card:hover {
+        transform: translateY(-5px);
+
+        box-shadow:
+          0 38px 95px rgba(31,50,41,.17),
+          0 10px 30px rgba(31,50,41,.1);
+      }
+
+
+      /* ---------------------------------------
+         HERO
+         --------------------------------------- */
+
+      .hero-title {
+        position: relative;
+        letter-spacing: -1.2px;
+        text-shadow: 0 12px 28px rgba(31,50,41,.08);
+      }
+
+      .hero-subtitle {
+        opacity: .88;
+      }
+
+
+      /* ---------------------------------------
+         STATUS BADGE
+         --------------------------------------- */
+
+      .status {
+        display: inline-block !important;
+        border-radius: 999px !important;
+        box-shadow: 0 5px 18px rgba(22,101,52,.12);
+        animation: breathe 3s ease-in-out infinite;
+      }
+
+      @keyframes breathe {
+        0%,100% {
+          transform: scale(1);
+          box-shadow: 0 5px 18px rgba(22,101,52,.11);
+        }
+
+        50% {
+          transform: scale(1.025);
+          box-shadow: 0 8px 25px rgba(22,101,52,.2);
+        }
+      }
+
+
+      /* ---------------------------------------
+         TICKET
+         --------------------------------------- */
+
+      .ticket {
+        position: relative;
+        overflow: hidden;
+
+        background:
+          radial-gradient(
+            circle at 15% 15%,
+            rgba(169,199,184,.19),
+            transparent 28%
+          ),
+          linear-gradient(
+            140deg,
+            #1f372d,
+            #2d4a3e 48%,
+            #355a49
+          ) !important;
+
+        box-shadow:
+          0 20px 45px rgba(28,51,41,.25),
+          inset 0 1px rgba(255,255,255,.07);
+
+        transition:
+          transform .4s ease,
+          box-shadow .4s ease;
+      }
+
+      .ticket:hover {
+        transform: translateY(-4px) scale(1.005);
+
+        box-shadow:
+          0 28px 55px rgba(28,51,41,.29),
+          inset 0 1px rgba(255,255,255,.08);
+      }
+
+      .ticket:after {
+        content: "";
+        position: absolute;
+        z-index: 3;
+
+        top: -50%;
+        left: -80%;
+
+        width: 45%;
+        height: 210%;
+
+        background:
+          linear-gradient(
+            110deg,
+            transparent 0%,
+            rgba(255,255,255,.02) 35%,
+            rgba(255,255,255,.2) 50%,
+            rgba(255,255,255,.02) 65%,
+            transparent 100%
+          );
+
+        transform: rotate(12deg);
+        animation: ticketShine 5.5s ease-in-out infinite;
+        pointer-events: none;
+      }
+
+      @keyframes ticketShine {
+        0%,60% {
+          left: -80%;
+        }
+
+        100% {
+          left: 140%;
+        }
+      }
+
+
+      /* ---------------------------------------
+         CTA
+         --------------------------------------- */
+
+      .primary-button a {
+        position: relative !important;
+        overflow: hidden !important;
+
+        box-shadow:
+          0 9px 22px rgba(45,74,62,.18);
+
+        transition:
+          transform .25s ease,
+          box-shadow .25s ease,
+          background .25s ease !important;
+      }
+
+      .primary-button a:hover {
+        transform: translateY(-3px);
+
+        background: #213a30 !important;
+
+        box-shadow:
+          0 15px 28px rgba(45,74,62,.27);
+      }
+
+
+      /* ---------------------------------------
+         PERK
+         --------------------------------------- */
+
+      .perk {
+        position: relative;
+
+        background:
+          radial-gradient(
+            circle at 15% 10%,
+            rgba(255,255,255,.75),
+            transparent 30%
+          ),
+          linear-gradient(
+            135deg,
+            #fbf5ea,
+            #f6ead0
+          ) !important;
+
+        box-shadow:
+          inset 0 0 0 1px rgba(154,120,56,.15),
+          0 10px 30px rgba(117,88,30,.07);
+
+        transition:
+          transform .35s ease,
+          box-shadow .35s ease;
+      }
+
+      .perk:hover {
+        transform: translateY(-3px);
+
+        box-shadow:
+          inset 0 0 0 1px rgba(154,120,56,.21),
+          0 18px 40px rgba(117,88,30,.12);
+      }
+
+      .promo-code {
+        display: inline-block !important;
+        border: 1px dashed rgba(154,120,56,.45);
+        border-radius: 8px;
+
+        background: rgba(255,255,255,.48);
+
+        padding: 8px 14px !important;
+
+        letter-spacing: 1px;
+
+        animation: codeGlow 3s ease-in-out infinite;
+      }
+
+      @keyframes codeGlow {
+        0%,100% {
+          box-shadow: 0 0 0 rgba(154,120,56,0);
+        }
+
+        50% {
+          box-shadow: 0 0 22px rgba(154,120,56,.17);
+        }
+      }
+
+
+      /* ---------------------------------------
+         TIMELINE
+         --------------------------------------- */
+
+      .timeline-dot {
+        display: inline-block;
+        width: 9px;
+        height: 9px;
+        margin: 0 8px;
+        border-radius: 50%;
+        background: #91b5a3;
+        box-shadow: 0 0 0 5px rgba(145,181,163,.1);
+        animation: timelinePulse 2.4s ease-in-out infinite;
+      }
+
+      @keyframes timelinePulse {
+        0%,100% {
+          box-shadow: 0 0 0 4px rgba(145,181,163,.08);
+        }
+
+        50% {
+          box-shadow: 0 0 0 10px rgba(145,181,163,0);
+        }
+      }
+
+
+      /* ---------------------------------------
+         INFO ITEMS
+         --------------------------------------- */
+
+      .info-item {
+        transition:
+          transform .25s ease,
+          background .25s ease;
+      }
+
+      .info-item:hover {
+        transform: translateX(5px);
+      }
+
+
+      /* ---------------------------------------
+         MEMORY CARDS
+         --------------------------------------- */
+
+      .memory {
+        transition:
+          transform .3s ease,
+          box-shadow .3s ease;
+      }
+
+      .memory:hover {
+        transform: translateY(-5px);
+
+        box-shadow:
+          0 13px 28px rgba(45,74,62,.1);
+      }
+
+      .memory-icon {
+        display: inline-block;
+        animation: floatIcon 4s ease-in-out infinite;
+      }
+
+      @keyframes floatIcon {
+        0%,100% {
+          transform: translateY(0);
+        }
+
+        50% {
+          transform: translateY(-6px);
+        }
+      }
+
+
+      /* ---------------------------------------
+         BOTANICAL DIVIDER
+         --------------------------------------- */
+
+      .botanical {
+        color: #90ad9e;
+        letter-spacing: 8px;
+
+        animation: botanicalFade 4s ease-in-out infinite;
+      }
+
+      @keyframes botanicalFade {
+        0%,100% {
+          opacity: .45;
+          letter-spacing: 8px;
+        }
+
+        50% {
+          opacity: 1;
+          letter-spacing: 11px;
+        }
+      }
+
+
+      /* ---------------------------------------
+         SOCIAL
+         --------------------------------------- */
+
+      .hashtags {
+        transition:
+          letter-spacing .3s ease,
+          color .3s ease;
+      }
+
+      .hashtags:hover {
+        letter-spacing: .7px;
+        color: #1f372d !important;
+      }
+
+
+      /* ---------------------------------------
+         REDUCED MOTION
+         --------------------------------------- */
+
+      @media (prefers-reduced-motion: reduce) {
+
+        *,
+        *:before,
+        *:after {
+          animation: none !important;
+          transition: none !important;
+        }
+
+      }
+    </mj-style>
+
+  </mj-head>
+
+
+  <mj-body background-color="#e5ece8">
+
+
+    <!-- =====================================================
+         TOP BRAND
+         ===================================================== -->
+
+    <mj-section
+      css-class="aurora"
+      background-color="#e8efeb"
+      padding="45px 20px 20px"
+    >
+      <mj-column>
+
+        <mj-text
+          align="center"
+          font-family="Arial, Helvetica, sans-serif"
+          font-size="10px"
+          font-weight="700"
+          letter-spacing="2.5px"
+          color="#788981"
+          padding="0 0 12px"
+        >
+          CREATOR SOCIAL · EMAIL EXPERIENCE
+        </mj-text>
+
+
+        <mj-text
+          css-class="brand-title"
+          align="center"
+          font-size="31px"
+          font-weight="700"
+          letter-spacing="4px"
+          color="#244136"
+          padding="0"
+        >
+          Juniper's Tea Room
+        </mj-text>
+
+
+        <mj-text
+          align="center"
+          font-family="Arial, Helvetica, sans-serif"
+          font-size="11px"
+          color="#718078"
+          padding="18px 0 0"
+        >
+          CONFIRMATION
+
+          <span class="brand-dot">●</span>
+
+          REMINDER
+
+          <span class="brand-dot">●</span>
+
+          THANK-YOU
+        </mj-text>
+
+      </mj-column>
+    </mj-section>
+
+
+    <!-- BOTANICAL -->
+
+    <mj-section
+      background-color="#e8efeb"
+      padding="5px 20px 32px"
+    >
+      <mj-column>
+
+        <mj-text
+          css-class="botanical"
+          align="center"
+          font-size="15px"
+          padding="0"
+        >
+          ❦ · ❦ · ❦
+        </mj-text>
+
+      </mj-column>
+    </mj-section>
+
+
+    <!-- =====================================================
+         EMAIL 01 LABEL
+         ===================================================== -->
+
+    <mj-section
+      background-color="#e5ece8"
+      padding="10px 20px"
+    >
+      <mj-column>
+
+        <mj-text
+          align="center"
+          font-family="Arial, Helvetica, sans-serif"
+          font-size="10px"
+          font-weight="700"
+          letter-spacing="2px"
+          color="#819087"
+          padding="0"
+        >
+          01 &nbsp; / &nbsp; CONFIRMATION
+        </mj-text>
+
+      </mj-column>
+    </mj-section>
+
+
+    <!-- =====================================================
+         EMAIL 01 CARD
+         ===================================================== -->
+
+    <mj-wrapper
+      css-class="email-card"
+      background-color="#ffffff"
+      border-radius="24px"
+      padding="0"
+    >
+
+      <!-- HERO -->
+
+      <mj-section padding="54px 32px 22px">
+        <mj-column>
+
+          <mj-text
+            css-class="status"
+            align="center"
+            font-family="Arial, Helvetica, sans-serif"
+            font-size="11px"
+            font-weight="700"
+            color="#166534"
+            padding="0 0 23px"
+          >
+            ✓ &nbsp; YOU'RE CONFIRMED
+          </mj-text>
+
+
+          <mj-text
+            css-class="hero-title"
+            align="center"
+            font-size="42px"
+            line-height="47px"
+            font-weight="700"
+            color="#1f3229"
+            padding="0"
+          >
+            Your seat at the<br />
+            table is set.
+          </mj-text>
+
+
+          <mj-text
+            css-class="hero-subtitle"
+            align="center"
+            font-size="17px"
+            line-height="28px"
+            color="#5f6f68"
+            padding="18px 20px 4px"
+          >
+            Thank you for confirming,
+            <strong>Alex</strong>.
+
+            <br />
+
+            We can't wait to pour you a cup.
+          </mj-text>
+
+        </mj-column>
+      </mj-section>
+
+
+      <!-- TICKET -->
+
+      <mj-section
+        css-class="ticket"
+        background-color="#2d4a3e"
+        border-radius="18px"
+        padding="32px 25px 18px"
+      >
+        <mj-column>
+
+          <mj-text
+            align="center"
+            font-family="Arial, Helvetica, sans-serif"
+            font-size="10px"
+            font-weight="700"
+            letter-spacing="2px"
+            color="#a9c7b8"
+            padding="0 0 11px"
+          >
+            ADMIT ONE · CREATOR SOCIAL
+          </mj-text>
+
+
+          <mj-text
+            align="center"
+            font-size="29px"
+            line-height="36px"
+            font-weight="700"
+            color="#ffffff"
+            padding="0"
+          >
+            Tea, Stories &amp;<br />
+            Summer Botanicals
+          </mj-text>
+
+
+          <mj-text
+            align="center"
+            font-family="Courier New, monospace"
+            font-size="12px"
+            color="#94b5a6"
+            padding="15px 0 17px"
+          >
+            NO. JTR-0917 &nbsp;/&nbsp;
+            SEAT: RESERVED
+          </mj-text>
+
+
+          <mj-divider
+            border-width="1px"
+            border-style="dashed"
+            border-color="#587568"
+            padding="0"
+          />
+
+        </mj-column>
+      </mj-section>
+
+
+      <mj-section
+        css-class="ticket"
+        background-color="#2d4a3e"
+        padding="3px 15px 27px"
+      >
+
+        <mj-column width="33.33%">
+
+          <mj-text
+            align="center"
+            font-family="Arial, Helvetica, sans-serif"
+            font-size="9px"
+            letter-spacing="1.5px"
+            color="#a9c7b8"
+            padding="0 0 5px"
+          >
+            DATE
+          </mj-text>
+
+          <mj-text
+            align="center"
+            font-size="14px"
+            font-weight="700"
+            color="#ffffff"
+            padding="0"
+          >
+            THU · SEP 17
+          </mj-text>
+
+          <mj-text
+            align="center"
+            font-size="11px"
+            color="#94b5a6"
+            padding="4px 0"
+          >
+            2026
+          </mj-text>
+
+        </mj-column>
+
+
+        <mj-column width="33.33%">
+
+          <mj-text
+            align="center"
+            font-family="Arial, Helvetica, sans-serif"
+            font-size="9px"
+            letter-spacing="1.5px"
+            color="#a9c7b8"
+            padding="0 0 5px"
+          >
+            TIME
+          </mj-text>
+
+          <mj-text
+            align="center"
+            font-size="14px"
+            font-weight="700"
+            color="#ffffff"
+            padding="0"
+          >
+            6:30 – 9:00
+          </mj-text>
+
+          <mj-text
+            align="center"
+            font-size="11px"
+            color="#94b5a6"
+            padding="4px 0"
+          >
+            PM
+          </mj-text>
+
+        </mj-column>
+
+
+        <mj-column width="33.33%">
+
+          <mj-text
+            align="center"
+            font-family="Arial, Helvetica, sans-serif"
+            font-size="9px"
+            letter-spacing="1.5px"
+            color="#a9c7b8"
+            padding="0 0 5px"
+          >
+            LOCATION
+          </mj-text>
+
+          <mj-text
+            align="center"
+            font-size="14px"
+            font-weight="700"
+            color="#ffffff"
+            padding="0"
+          >
+            Juniper's
+          </mj-text>
+
+          <mj-text
+            align="center"
+            font-size="11px"
+            color="#94b5a6"
+            padding="4px 0"
+          >
+            Botanical Ave
+          </mj-text>
+
+        </mj-column>
+
+      </mj-section>
+
+
+      <!-- CTA -->
+
+      <mj-section padding="31px 25px 18px">
+        <mj-column>
+
+          <mj-button
+            css-class="primary-button"
+            href="#"
+          >
+            ＋ Add to Calendar
+          </mj-button>
+
+
+          <mj-text
+            align="center"
+            font-family="Arial, Helvetica, sans-serif"
+            font-size="12px"
+            color="#839089"
+            padding="8px 0 0"
+          >
+            We'll remind you again the day before.
+          </mj-text>
+
+        </mj-column>
+      </mj-section>
+
+
+      <!-- PERK -->
+
+      <mj-section
+        css-class="perk"
+        background-color="#fbf5ea"
+        border-radius="15px"
+        padding="31px 27px"
+      >
+        <mj-column>
+
+          <mj-text
+            align="center"
+            font-family="Arial, Helvetica, sans-serif"
+            font-size="10px"
+            font-weight="700"
+            letter-spacing="2px"
+            color="#9a7838"
+            padding="0 0 9px"
+          >
+            A LITTLE SOMETHING
+          </mj-text>
+
+
+          <mj-text
+            align="center"
+            font-size="24px"
+            font-weight="700"
+            color="#57431f"
+            padding="0"
+          >
+            Your first pot is on us.
+          </mj-text>
+
+
+          <mj-text
+            align="center"
+            font-size="15px"
+            line-height="25px"
+            color="#7a6741"
+            padding="12px 10px 6px"
+          >
+            Your complimentary seasonal tea flight
+            is already attached to your reservation.
+          </mj-text>
+
+
+          <mj-text
+            css-class="promo-code"
+            align="center"
+            font-family="Courier New, monospace"
+            font-size="13px"
+            font-weight="700"
+            color="#9a7838"
+            padding="8px 12px"
+          >
+            alex@example.com
+          </mj-text>
+
+        </mj-column>
+      </mj-section>
+
+
+      <!-- INFO -->
+
+      <mj-section padding="37px 31px 15px">
+        <mj-column>
+
+          <mj-text
+            font-family="Arial, Helvetica, sans-serif"
+            font-size="10px"
+            font-weight="700"
+            letter-spacing="2px"
+            color="#7c8a83"
+            padding="0 0 8px"
+          >
+            BEFORE YOU ARRIVE
+          </mj-text>
+
+
+          <mj-text
+            font-size="24px"
+            font-weight="700"
+            color="#2d4a3e"
+            padding="0 0 15px"
+          >
+            A few things to know
+          </mj-text>
+
+
+          <mj-text
+            css-class="info-item"
+            font-size="14px"
+            line-height="26px"
+            color="#596861"
+          >
+            <strong style="color:#2d4a3e">
+              6:15 PM
+            </strong>
+
+            &nbsp; — &nbsp;
+
+            Doors open. Come early and settle in.
+          </mj-text>
+
+
+          <mj-divider
+            border-width="1px"
+            border-color="#edf1ee"
+          />
+
+
+          <mj-text
+            css-class="info-item"
+            font-size="14px"
+            line-height="26px"
+            color="#596861"
+          >
+            <strong style="color:#2d4a3e">
+              Relaxed
+            </strong>
+
+            &nbsp; — &nbsp;
+
+            Seating is casual. Wear whatever feels like you.
+          </mj-text>
+
+
+          <mj-divider
+            border-width="1px"
+            border-color="#edf1ee"
+          />
+
+
+          <mj-text
+            css-class="info-item"
+            font-size="14px"
+            line-height="26px"
+            color="#596861"
+          >
+            <strong style="color:#2d4a3e">
+              Cameras welcome
+            </strong>
+
+            &nbsp; — &nbsp;
+
+            Photo-friendly corners will be waiting for you.
+          </mj-text>
+
+        </mj-column>
+      </mj-section>
+
+
+      <!-- SIGNATURE -->
+
+      <mj-section padding="22px 31px 43px">
+        <mj-column>
+
+          <mj-text
+            font-size="15px"
+            line-height="26px"
+            color="#33443d"
+          >
+            We're so glad you'll be joining us.
+
+            <br /><br />
+
+            <strong style="color:#2d4a3e">
+              See you at the tea table,<br />
+              Juniper and the Tea Room team
+            </strong>
+          </mj-text>
+
+        </mj-column>
+      </mj-section>
+
+    </mj-wrapper>
+
+
+    <!-- =====================================================
+         TRANSITION 01 → 02
+         ===================================================== -->
+
+    <mj-section
+      background-color="#e5ece8"
+      padding="46px 20px"
+    >
+      <mj-column>
+
+        <mj-text
+          css-class="botanical"
+          align="center"
+          font-size="15px"
+          padding="0 0 16px"
+        >
+          ❦ · ❦ · ❦
+        </mj-text>
+
+        <mj-text
+          align="center"
+          font-family="Arial, Helvetica, sans-serif"
+          font-size="10px"
+          font-weight="700"
+          letter-spacing="2px"
+          color="#7a8981"
+          padding="0"
+        >
+          24 HOURS LATER
+        </mj-text>
+
+      </mj-column>
+    </mj-section>
+
+
+    <!-- =====================================================
+         EMAIL 02
+         ===================================================== -->
+
+    <mj-section
+      background-color="#e5ece8"
+      padding="0 20px 10px"
+    >
+      <mj-column>
+
+        <mj-text
+          align="center"
+          font-family="Arial, Helvetica, sans-serif"
+          font-size="10px"
+          font-weight="700"
+          letter-spacing="2px"
+          color="#819087"
+          padding="0"
+        >
+          02 &nbsp; / &nbsp; DAY-BEFORE REMINDER
+        </mj-text>
+
+      </mj-column>
+    </mj-section>
+
+
+    <mj-wrapper
+      css-class="email-card"
+      background-color="#ffffff"
+      border-radius="24px"
+      padding="0"
+    >
+
+      <mj-section padding="53px 32px 22px">
+        <mj-column>
+
+          <mj-text
+            css-class="status"
+            align="center"
+            font-family="Arial, Helvetica, sans-serif"
+            font-size="11px"
+            font-weight="700"
+            color="#946c21"
+            padding="0 0 23px"
+          >
+            ◷ &nbsp; ONE DAY TO GO
+          </mj-text>
+
+
+          <mj-text
+            css-class="hero-title"
+            align="center"
+            font-size="42px"
+            line-height="47px"
+            font-weight="700"
+            color="#1f3229"
+            padding="0"
+          >
+            Your tea table<br />
+            is waiting.
+          </mj-text>
+
+
+          <mj-text
+            align="center"
+            font-size="17px"
+            line-height="28px"
+            color="#5f6f68"
+            padding="18px 15px 5px"
+          >
+            Just a little reminder,
+            <strong>Alex</strong> —
+
+            <br />
+
+            Juniper's Creator Social is tomorrow.
+          </mj-text>
+
+        </mj-column>
+      </mj-section>
+
+
+      <!-- TICKET -->
+
+      <mj-section
+        css-class="ticket"
+        background-color="#2d4a3e"
+        border-radius="18px"
+        padding="32px 25px 18px"
+      >
+        <mj-column>
+
+          <mj-text
+            align="center"
+            font-family="Arial, Helvetica, sans-serif"
+            font-size="10px"
+            font-weight="700"
+            letter-spacing="2px"
+            color="#a9c7b8"
+            padding="0 0 11px"
+          >
+            TOMORROW · CREATOR SOCIAL
+          </mj-text>
+
+
+          <mj-text
+            align="center"
+            font-size="29px"
+            line-height="36px"
+            font-weight="700"
+            color="#ffffff"
+            padding="0"
+          >
+            Tea, Stories &amp;<br />
+            Summer Botanicals
+          </mj-text>
+
+
+          <mj-text
+            align="center"
+            font-family="Courier New, monospace"
+            font-size="12px"
+            color="#94b5a6"
+            padding="15px 0 17px"
+          >
+            NO. JTR-0917 &nbsp;/&nbsp;
+            STATUS: READY
+          </mj-text>
+
+
+          <mj-divider
+            border-width="1px"
+            border-style="dashed"
+            border-color="#587568"
+          />
+
+        </mj-column>
+      </mj-section>
+
+
+      <mj-section
+        css-class="ticket"
+        background-color="#2d4a3e"
+        padding="3px 15px 27px"
+      >
+
+        <mj-column width="33.33%">
+
+          <mj-text
+            align="center"
+            font-family="Arial, Helvetica, sans-serif"
+            font-size="9px"
+            letter-spacing="1.5px"
+            color="#a9c7b8"
+            padding="0 0 5px"
+          >
+            TOMORROW
+          </mj-text>
+
+          <mj-text
+            align="center"
+            font-size="14px"
+            font-weight="700"
+            color="#ffffff"
+            padding="0"
+          >
+            SEP 17
+          </mj-text>
+
+          <mj-text
+            align="center"
+            font-size="11px"
+            color="#94b5a6"
+            padding="4px"
+          >
+            Thursday
+          </mj-text>
+
+        </mj-column>
+
+
+        <mj-column width="33.33%">
+
+          <mj-text
+            align="center"
+            font-family="Arial, Helvetica, sans-serif"
+            font-size="9px"
+            letter-spacing="1.5px"
+            color="#a9c7b8"
+            padding="0 0 5px"
+          >
+            DOORS
+          </mj-text>
+
+          <mj-text
+            align="center"
+            font-size="14px"
+            font-weight="700"
+            color="#ffffff"
+            padding="0"
+          >
+            6:15 PM
+          </mj-text>
+
+          <mj-text
+            align="center"
+            font-size="11px"
+            color="#94b5a6"
+            padding="4px"
+          >
+            Starts 6:30
+          </mj-text>
+
+        </mj-column>
+
+
+        <mj-column width="33.33%">
+
+          <mj-text
+            align="center"
+            font-family="Arial, Helvetica, sans-serif"
+            font-size="9px"
+            letter-spacing="1.5px"
+            color="#a9c7b8"
+            padding="0 0 5px"
+          >
+            LOCATION
+          </mj-text>
+
+          <mj-text
+            align="center"
+            font-size="14px"
+            font-weight="700"
+            color="#ffffff"
+            padding="0"
+          >
+            Juniper's
+          </mj-text>
+
+          <mj-text
+            align="center"
+            font-size="11px"
+            color="#94b5a6"
+            padding="4px"
+          >
+            Botanical Ave
+          </mj-text>
+
+        </mj-column>
+
+      </mj-section>
+
+
+      <mj-section padding="31px 25px 18px">
+        <mj-column>
+
+          <mj-button
+            css-class="primary-button"
+            href="#"
+          >
+            ↗ Get Directions
+          </mj-button>
+
+          <mj-text
+            align="center"
+            font-family="Arial, Helvetica, sans-serif"
+            font-size="12px"
+            color="#839089"
+          >
+            Suite B · Look for the green door.
+          </mj-text>
+
+        </mj-column>
+      </mj-section>
+
+
+      <!-- CHECKLIST -->
+
+      <mj-section padding="30px 31px 42px">
+        <mj-column>
+
+          <mj-text
+            font-family="Arial, Helvetica, sans-serif"
+            font-size="10px"
+            font-weight="700"
+            letter-spacing="2px"
+            color="#7c8a83"
+          >
+            QUICK CHECK
+          </mj-text>
+
+          <mj-text
+            font-size="24px"
+            font-weight="700"
+            color="#2d4a3e"
+            padding="0 0 16px"
+          >
+            Before you head out
+          </mj-text>
+
+
+          <mj-text
+            css-class="info-item"
+            color="#596861"
+          >
+            ✓ &nbsp;
+            <strong style="color:#2d4a3e">
+              Arrive from 6:15
+            </strong>
+          </mj-text>
+
+
+          <mj-text
+            css-class="info-item"
+            color="#596861"
+          >
+            ✓ &nbsp;
+            <strong style="color:#2d4a3e">
+              Come as you are
+            </strong>
+          </mj-text>
+
+
+          <mj-text
+            css-class="info-item"
+            color="#596861"
+          >
+            ✓ &nbsp;
+            <strong style="color:#2d4a3e">
+              Camera welcome
+            </strong>
+          </mj-text>
+
+
+          <mj-text
+            css-class="info-item"
+            color="#596861"
+          >
+            ✓ &nbsp;
+            <strong style="color:#2d4a3e">
+              Tea flight included
+            </strong>
+          </mj-text>
+
+
+          <mj-button
+            href="#"
+            background-color="#ffffff"
+            color="#2d4a3e"
+            border="1px solid #cbd9d2"
+          >
+            Update RSVP
+          </mj-button>
+
+        </mj-column>
+      </mj-section>
+
+    </mj-wrapper>
+
+
+    <!-- =====================================================
+         TRANSITION 02 → 03
+         ===================================================== -->
+
+    <mj-section
+      background-color="#e5ece8"
+      padding="47px 20px"
+    >
+      <mj-column>
+
+        <mj-text
+          css-class="botanical"
+          align="center"
+          font-size="15px"
+          padding="0 0 15px"
+        >
+          ❦ · ✦ · ❦
+        </mj-text>
+
+        <mj-text
+          align="center"
+          font-family="Arial, Helvetica, sans-serif"
+          font-size="10px"
+          font-weight="700"
+          letter-spacing="2px"
+          color="#7a8981"
+        >
+          AFTER THE EVENT
+        </mj-text>
+
+      </mj-column>
+    </mj-section>
+
+
+    <!-- =====================================================
+         EMAIL 03
+         ===================================================== -->
+
+    <mj-section
+      background-color="#e5ece8"
+      padding="0 20px 10px"
+    >
+      <mj-column>
+
+        <mj-text
+          align="center"
+          font-family="Arial, Helvetica, sans-serif"
+          font-size="10px"
+          font-weight="700"
+          letter-spacing="2px"
+          color="#819087"
+        >
+          03 &nbsp; / &nbsp; THANK-YOU
+        </mj-text>
+
+      </mj-column>
+    </mj-section>
+
+
+    <mj-wrapper
+      css-class="email-card"
+      background-color="#ffffff"
+      border-radius="24px"
+      padding="0"
+    >
+
+      <mj-section padding="54px 32px 22px">
+        <mj-column>
+
+          <mj-text
+            css-class="status"
+            align="center"
+            font-family="Arial, Helvetica, sans-serif"
+            font-size="11px"
+            font-weight="700"
+            color="#166534"
+            padding="0 0 23px"
+          >
+            ♥ &nbsp; THANK YOU FOR COMING
+          </mj-text>
+
+
+          <mj-text
+            css-class="hero-title"
+            align="center"
+            font-size="42px"
+            line-height="47px"
+            font-weight="700"
+            color="#1f3229"
+            padding="0"
+          >
+            You made the<br />
+            evening special.
+          </mj-text>
+
+
+          <mj-text
+            align="center"
+            font-size="17px"
+            line-height="28px"
+            color="#5f6f68"
+            padding="18px 17px 4px"
+          >
+            Thank you, <strong>Alex</strong>,
+            for spending part of your evening with us.
+
+            <br /><br />
+
+            We loved sharing tea, stories
+            and a little summer magic with you.
+          </mj-text>
+
+        </mj-column>
+      </mj-section>
+
+
+      <!-- MEMORY TICKET -->
+
+      <mj-section
+        css-class="ticket"
+        background-color="#2d4a3e"
+        border-radius="18px"
+        padding="32px 25px 18px"
+      >
+        <mj-column>
+
+          <mj-text
+            align="center"
+            font-family="Arial, Helvetica, sans-serif"
+            font-size="10px"
+            font-weight="700"
+            letter-spacing="2px"
+            color="#a9c7b8"
+          >
+            A LITTLE KEEPSAKE
+          </mj-text>
+
+
+          <mj-text
+            align="center"
+            font-size="29px"
+            line-height="36px"
+            font-weight="700"
+            color="#ffffff"
+            padding="2px 0"
+          >
+            Tea, Stories &amp;<br />
+            Summer Botanicals
+          </mj-text>
+
+
+          <mj-text
+            align="center"
+            font-family="Courier New, monospace"
+            font-size="12px"
+            color="#94b5a6"
+          >
+            SEP 17 · 2026
+          </mj-text>
+
+        </mj-column>
+      </mj-section>
+
+
+      <!-- MEMORIES -->
+
+      <mj-section padding="35px 20px 12px">
+        <mj-column>
+
+          <mj-text
+            font-family="Arial, Helvetica, sans-serif"
+            font-size="10px"
+            font-weight="700"
+            letter-spacing="2px"
+            color="#7c8a83"
+          >
+            FROM THE EVENING
+          </mj-text>
+
+          <mj-text
+            font-size="24px"
+            font-weight="700"
+            color="#2d4a3e"
+            padding="0 0 18px"
+          >
+            A few things worth keeping
+          </mj-text>
+
+        </mj-column>
+      </mj-section>
+
+
+      <mj-section padding="0 20px 22px">
+
+        <mj-column
+          css-class="memory"
+          width="31%"
+          background-color="#f7faf8"
+          border="1px solid #e2eae6"
+          border-radius="12px"
+        >
+
+          <mj-text
+            css-class="memory-icon"
+            align="center"
+            font-size="27px"
+            padding="20px 5px 8px"
+          >
+            🍵
+          </mj-text>
+
+          <mj-text
+            align="center"
+            font-family="Arial, Helvetica, sans-serif"
+            font-size="12px"
+            font-weight="700"
+            color="#2d4a3e"
+            line-height="18px"
+            padding="0 5px 20px"
+          >
+            Seasonal<br />
+            tea flight
+          </mj-text>
+
+        </mj-column>
+
+
+        <mj-column width="3%"></mj-column>
+
+
+        <mj-column
+          css-class="memory"
+          width="31%"
+          background-color="#f7faf8"
+          border="1px solid #e2eae6"
+          border-radius="12px"
+        >
+
+          <mj-text
+            css-class="memory-icon"
+            align="center"
+            font-size="27px"
+            padding="20px 5px 8px"
+          >
+            ✦
+          </mj-text>
+
+          <mj-text
+            align="center"
+            font-family="Arial, Helvetica, sans-serif"
+            font-size="12px"
+            font-weight="700"
+            color="#2d4a3e"
+            line-height="18px"
+            padding="0 5px 20px"
+          >
+            New<br />
+            connections
+          </mj-text>
+
+        </mj-column>
+
+
+        <mj-column width="3%"></mj-column>
+
+
+        <mj-column
+          css-class="memory"
+          width="31%"
+          background-color="#f7faf8"
+          border="1px solid #e2eae6"
+          border-radius="12px"
+        >
+
+          <mj-text
+            css-class="memory-icon"
+            align="center"
+            font-size="27px"
+            padding="20px 5px 8px"
+          >
+            🌿
+          </mj-text>
+
+          <mj-text
+            align="center"
+            font-family="Arial, Helvetica, sans-serif"
+            font-size="12px"
+            font-weight="700"
+            color="#2d4a3e"
+            line-height="18px"
+            padding="0 5px 20px"
+          >
+            Summer<br />
+            botanicals
+          </mj-text>
+
+        </mj-column>
+
+      </mj-section>
+
+
+      <!-- GALLERY -->
+
+      <mj-section padding="25px 25px 15px">
+        <mj-column>
+
+          <mj-button
+            css-class="primary-button"
+            href="#"
+          >
+            View the Photo Gallery →
+          </mj-button>
+
+
+          <mj-text
+            css-class="hashtags"
+            align="center"
+            font-family="Courier New, monospace"
+            font-size="11px"
+            font-weight="700"
+            color="#618072"
+          >
+            #TeaWithJuniper
+          </mj-text>
+
+        </mj-column>
+      </mj-section>
+
+
+      <!-- OFFER -->
+
+      <mj-section
+        css-class="perk"
+        background-color="#fbf5ea"
+        border-radius="15px"
+        padding="31px 27px"
+      >
+        <mj-column>
+
+          <mj-text
+            align="center"
+            font-family="Arial, Helvetica, sans-serif"
+            font-size="10px"
+            font-weight="700"
+            letter-spacing="2px"
+            color="#9a7838"
+          >
+            A SMALL THANK-YOU
+          </mj-text>
+
+
+          <mj-text
+            align="center"
+            font-size="24px"
+            font-weight="700"
+            color="#57431f"
+            padding="0"
+          >
+            Come back for another pot.
+          </mj-text>
+
+
+          <mj-text
+            align="center"
+            font-size="15px"
+            line-height="25px"
+            color="#7a6741"
+          >
+            Enjoy 15% off your next tea service
+            through October 15.
+          </mj-text>
+
+
+          <mj-text
+            css-class="promo-code"
+            align="center"
+            font-family="Courier New, monospace"
+            font-size="15px"
+            font-weight="700"
+            color="#9a7838"
+            letter-spacing="1px"
+          >
+            JUNIPER15
+          </mj-text>
+
+        </mj-column>
+      </mj-section>
+
+
+      <!-- FEEDBACK -->
+
+      <mj-section padding="37px 31px 43px">
+        <mj-column>
+
+          <mj-text
+            font-family="Arial, Helvetica, sans-serif"
+            font-size="10px"
+            font-weight="700"
+            letter-spacing="2px"
+            color="#7c8a83"
+          >
+            TELL US HOW IT FELT
+          </mj-text>
+
+
+          <mj-text
+            font-size="24px"
+            font-weight="700"
+            color="#2d4a3e"
+            padding="0 0 12px"
+          >
+            One minute.
+            Three questions.
+          </mj-text>
+
+
+          <mj-text
+            font-size="15px"
+            line-height="25px"
+            color="#596861"
+          >
+            Your feedback helps shape the next gathering —
+            from the tea menu to the little details.
+          </mj-text>
+
+
+          <mj-button
+            href="#"
+            background-color="#ffffff"
+            color="#2d4a3e"
+            border="1px solid #cbd9d2"
+          >
+            Share Feedback
+          </mj-button>
+
+
+          <mj-text
+            font-size="15px"
+            line-height="26px"
+            color="#33443d"
+            padding="25px 0 0"
+          >
+            We hope you left with a warm cup,
+            a new connection or an idea worth carrying home.
+
+            <br /><br />
+
+            <strong style="color:#2d4a3e">
+              Until the next gathering,<br />
+              Juniper and the Tea Room team
+            </strong>
+          </mj-text>
+
+        </mj-column>
+      </mj-section>
+
+    </mj-wrapper>
+
+
+    <!-- =====================================================
+         FINAL JOURNEY
+         ===================================================== -->
+
+    <mj-section
+      background-color="#e5ece8"
+      padding="50px 20px 18px"
+    >
+      <mj-column>
+
+        <mj-text
+          css-class="botanical"
+          align="center"
+          font-size="16px"
+          padding="0 0 17px"
+        >
+          ❦ · ✦ · ❦
+        </mj-text>
+
+
+        <mj-text
+          align="center"
+          font-family="Arial, Helvetica, sans-serif"
+          font-size="10px"
+          font-weight="700"
+          letter-spacing="2px"
+          color="#77877f"
+        >
+          THE COMPLETE EXPERIENCE
+        </mj-text>
+
+
+        <mj-text
+          align="center"
+          font-size="26px"
+          font-weight="700"
+          line-height="34px"
+          color="#2d4a3e"
+        >
+          One event.<br />
+          Three thoughtful moments.
+        </mj-text>
+
+      </mj-column>
+    </mj-section>
+
+
+    <!-- JOURNEY CARDS -->
+
+    <mj-section
+      background-color="#e5ece8"
+      padding="5px 20px 35px"
+    >
+
+      <mj-column
+        css-class="memory"
+        width="31%"
+        background-color="#ffffff"
+        border-radius="12px"
+      >
+
+        <mj-text
+          align="center"
+          font-size="20px"
+          padding="17px 5px 4px"
+        >
+          ✓
+        </mj-text>
+
+        <mj-text
+          align="center"
+          font-family="Arial, Helvetica, sans-serif"
+          font-size="10px"
+          font-weight="700"
+          letter-spacing="1px"
+          color="#2d4a3e"
+          padding="0"
+        >
+          CONFIRM
+        </mj-text>
+
+        <mj-text
+          align="center"
+          font-family="Arial, Helvetica, sans-serif"
+          font-size="10px"
+          color="#7b8982"
+          padding="7px 4px 17px"
+        >
+          RSVP
+        </mj-text>
+
+      </mj-column>
+
+
+      <mj-column width="3%"></mj-column>
+
+
+      <mj-column
+        css-class="memory"
+        width="31%"
+        background-color="#ffffff"
+        border-radius="12px"
+      >
+
+        <mj-text
+          align="center"
+          font-size="20px"
+          padding="17px 5px 4px"
+        >
+          ◷
+        </mj-text>
+
+        <mj-text
+          align="center"
+          font-family="Arial, Helvetica, sans-serif"
+          font-size="10px"
+          font-weight="700"
+          letter-spacing="1px"
+          color="#2d4a3e"
+          padding="0"
+        >
+          REMIND
+        </mj-text>
+
+        <mj-text
+          align="center"
+          font-family="Arial, Helvetica, sans-serif"
+          font-size="10px"
+          color="#7b8982"
+          padding="7px 4px 17px"
+        >
+          −1 day
+        </mj-text>
+
+      </mj-column>
+
+
+      <mj-column width="3%"></mj-column>
+
+
+      <mj-column
+        css-class="memory"
+        width="31%"
+        background-color="#ffffff"
+        border-radius="12px"
+      >
+
+        <mj-text
+          align="center"
+          font-size="20px"
+          padding="17px 5px 4px"
+        >
+          ♥
+        </mj-text>
+
+        <mj-text
+          align="center"
+          font-family="Arial, Helvetica, sans-serif"
+          font-size="10px"
+          font-weight="700"
+          letter-spacing="1px"
+          color="#2d4a3e"
+          padding="0"
+        >
+          THANK
+        </mj-text>
+
+        <mj-text
+          align="center"
+          font-family="Arial, Helvetica, sans-serif"
+          font-size="10px"
+          color="#7b8982"
+          padding="7px 4px 17px"
+        >
+          +1 day
+        </mj-text>
+
+      </mj-column>
+
+    </mj-section>
+
+
+    <!-- FOOTER -->
+
+    <mj-section
+      background-color="#e5ece8"
+      padding="10px 25px 48px"
+    >
+      <mj-column>
+
+        <mj-text
+          align="center"
+          font-family="Arial, Helvetica, sans-serif"
+          font-size="11px"
+          line-height="19px"
+          color="#89978f"
+        >
+          © 2026 Juniper's Tea Room
+
+          <br />
+
+          456 Botanical Ave · Suite B · Anytown
+
+          <br /><br />
+
+          <a
+            href="#"
+            style="
+              color:#718078;
+              text-decoration:underline;
+            "
+          >
+            Email preferences
+          </a>
+
+          &nbsp;·&nbsp;
+
+          <a
+            href="#"
+            style="
+              color:#718078;
+              text-decoration:underline;
+            "
+          >
+            Unsubscribe
+          </a>
+
+        </mj-text>
+
+      </mj-column>
+    </mj-section>
+
+  </mj-body>
+</mjml>
