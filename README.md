@@ -1,175 +1,211 @@
-# Email Alerts — Juniper's Tea Room
+# Juniper Email Journey Studio 2.0
 
-A bilingual, accessible and responsive email-experience showcase built for the **CodePen August 2026 Email Challenge**.
+An accessible, bilingual email campaign experience builder created for the **CodePen August 2026 Email Challenge** and expanded into a portfolio-ready mini product.
 
-The project presents a complete **Creator Social** communication journey for *Juniper's Tea Room*, covering three connected email moments:
-
-1. **Confirmation**
-2. **Reminder**
-3. **Thank-you / Follow-up**
-
-## Live Demo
+## Live demo
 
 https://laurandreea10.github.io/Email-Alerts/
 
-## Overview
+## What it is
 
-Email Alerts started as a premium email concept and evolved into a browser-ready interactive showcase. The current version combines polished editorial visuals with bilingual content, accessibility controls and theme customization.
+**Juniper Email Journey Studio** turns a simple set of event emails into an interactive campaign workspace. It combines email previewing, personalization, accessibility controls, simulated campaign analytics, A/B variants, export tools and PWA support in one dependency-free front-end experience.
 
-The experience is designed to demonstrate how transactional and event-related emails can feel cohesive, elegant and inclusive rather than purely functional.
+The campaign follows four moments:
 
-## Features
+1. **Confirmation**
+2. **Reminder**
+3. **Event day**
+4. **Thank-you / Follow-up**
 
-- **English / Romanian language switcher**
-- **Light and Dark Mode**
-- Preference persistence with `localStorage`
-- Automatic system-theme detection
-- Responsive layout for desktop, tablet and mobile
-- Confirmation, reminder and thank-you stages in one visual journey
-- Premium editorial styling inspired by tea-room and botanical aesthetics
-- Accessible keyboard navigation
-- Visible focus states
-- Skip-to-content link
+All stages are available in **English and Romanian**.
+
+## Highlights
+
+- RO / EN interface and email copy
+- Light and dark themes
+- Browser-language detection
+- Saved preferences with `localStorage`
+- Desktop, tablet and mobile email previews
+- Inbox simulator with subject and preview text
+- Interactive campaign journey timeline
+- Live personalization for guest name, date, location, promo code and RSVP status
+- Three A/B-style content variants: Elegant, Concise and Friendly
+- Demo analytics for open rate, CTA clicks and RSVP rate
+- Delivery-state indicators
+- Accessibility onboarding
+- Low-vision preset
+- Dyslexia-friendly / readable preset
+- Keyboard-first preset
 - High-contrast mode
-- Larger-text mode
 - Reduced-motion mode
-- Native `prefers-reduced-motion` support
-- Semantic HTML structure
-- ARIA labels and live announcements for interface changes
-- Accessible buttons and controls
-- Improved color contrast across light and dark themes
+- Adjustable text size
+- Selectable font mode
+- Increased spacing / line-height option
+- Skip link and semantic landmarks
+- Visible keyboard focus
+- ARIA live announcements
+- Semantic structure preview
+- Accessibility inspector
+- Keyboard shortcuts
+- Command palette with `Ctrl/Cmd + K`
+- Shareable URL configuration
+- Copy subject and preview text
+- Copy generated email HTML
+- Download standalone HTML email
+- Download campaign JSON
+- Copy accessibility report
+- Installable PWA support
+- Offline cache through a service worker
+- Responsive layout
+- No external JavaScript libraries
 
 ## Accessibility
 
-Accessibility is treated as a core part of the interface rather than an optional add-on.
+Accessibility is treated as a core product feature rather than an add-on.
 
-The project includes dedicated controls for users who may benefit from:
+The interface includes semantic HTML, focus-visible states, keyboard-operable controls, screen-reader announcements, reduced-motion support, responsive touch targets and configurable reading profiles.
 
-- increased text size;
-- stronger color contrast;
-- reduced animation and motion;
-- keyboard-only navigation;
-- clearer focus indication;
-- screen-reader-friendly status updates.
+The **Accessibility Inspector** provides a lightweight in-product checklist for:
 
-The interface also respects the operating system's `prefers-reduced-motion` preference.
+- semantic landmarks
+- keyboard navigation
+- visible focus
+- reduced-motion support
+- document language
+- touch target sizing
 
-## Dark Mode
+The **Semantic Preview** also exposes a simplified representation of the current email structure so the hierarchy can be understood independently of its visual design.
 
-The theme can be changed directly from the interface.
+## Keyboard shortcuts
 
-The selected mode is stored locally so the preferred appearance is restored on future visits. If no preference has been saved, the page can use the user's system color-scheme preference.
+| Shortcut | Action |
+| --- | --- |
+| `1` | Confirmation |
+| `2` | Reminder |
+| `3` | Event day |
+| `4` | Thank-you |
+| `D` | Toggle dark mode |
+| `L` | Change language |
+| `+` | Increase text size |
+| `-` | Decrease text size |
+| `Ctrl/Cmd + K` | Open command palette |
+| `Esc` | Close dialogs / command palette |
 
-## Languages
+## Personalization
 
-The interface is available in:
+The left campaign panel can update the preview in real time using:
 
-- **English**
-- **Română**
+- guest name
+- event date
+- location
+- promotional code
+- RSVP state
 
-Language selection is preserved locally between visits.
+These values are reflected directly inside the active email preview.
 
-## Email Journey
+## A/B variants
 
-### 01 — Confirmation
+Three simulated creative variants are available:
 
-Confirms the Creator Social registration and introduces the event details, visual identity and primary call to action.
+- **A — Elegant**
+- **B — Concise**
+- **C — Friendly**
 
-### 02 — Reminder
+Changing the variant also updates the demo engagement metrics to illustrate how a campaign experimentation workflow could be represented.
 
-Re-engages the attendee shortly before the event with the key information they need to arrive prepared.
+## Export tools
 
-### 03 — Thank-you
+The studio can:
 
-Completes the communication cycle with a warm follow-up after the event and creates an opportunity for continued engagement.
+- copy the active subject line
+- copy preview text
+- copy generated HTML
+- download a standalone HTML email
+- export the campaign configuration as JSON
+- copy an accessibility report
 
-## Design Direction
+These tools make the project feel closer to an email campaign product than a static visual challenge.
 
-The visual system combines:
+## PWA / offline support
 
-- botanical motifs;
-- soft green tones;
-- warm neutral surfaces;
-- editorial serif typography;
-- subtle depth and shadows;
-- ticket-inspired event details;
-- restrained micro-interactions.
+The project includes:
 
-Animations are intentionally decorative and can be disabled through reduced-motion preferences or the accessibility controls.
+- `manifest.webmanifest`
+- custom SVG app icon
+- service worker
+- install prompt support where the browser allows it
+- offline caching for core project assets
 
-## Technology
+## Project structure
+
+```text
+Email-Alerts/
+├── index.html
+├── style.css
+├── app.js
+├── manifest.webmanifest
+├── sw.js
+├── icon.svg
+└── README.md
+```
+
+## Tech stack
 
 - HTML5
 - CSS3
 - Vanilla JavaScript
 - CSS custom properties
-- Local Storage
+- Web Storage API
+- Clipboard API
+- Blob / Object URL exports
+- URLSearchParams
+- Web App Manifest
+- Service Worker / Cache API
 - GitHub Pages
 
-No framework or build step is required for the published version.
+## Progressive enhancement
 
-## Project Structure
+The project intentionally avoids frameworks and external runtime dependencies. The visual interface is built with standard browser technologies, while enhanced capabilities such as clipboard access, installation and offline behavior use native Web APIs when supported.
 
-```text
-Email-Alerts/
-├── index.html
-└── README.md
-```
+## Local development
 
-The application is intentionally delivered as a compact single-page project, making it easy to preview, fork and deploy.
+Clone the repository and serve the folder through a local web server. A local server is recommended because service workers do not run normally from a plain `file://` URL.
 
-## Run Locally
-
-Clone the repository:
+For example:
 
 ```bash
-git clone https://github.com/LaurAndreea10/Email-Alerts.git
+python -m http.server 8000
 ```
 
-Open the project folder and launch `index.html` in a browser.
+Then open:
 
-You can also use any local development server, for example VS Code Live Server.
+```text
+http://localhost:8000
+```
 
-## GitHub Pages
+## Design direction
 
-The project is deployed from the `main` branch using GitHub Pages.
+The visual system is inspired by a calm editorial tea-room identity: botanical greens, warm neutrals, serif display typography, spacious surfaces and restrained motion. Dark mode and high-contrast mode adapt that identity without making accessibility feel separate from the core design.
 
-Live version:
+## Purpose
 
-https://laurandreea10.github.io/Email-Alerts/
+This project demonstrates the intersection of:
 
-## Goals of the Project
-
-This project explores how a small email campaign can work as a connected product experience rather than three unrelated templates.
-
-The main goals are to:
-
-- maintain a consistent visual language across the full communication journey;
-- provide useful event information without overwhelming the reader;
-- combine polished UI effects with accessibility safeguards;
-- support multiple languages without duplicating the entire interface;
-- demonstrate progressive enhancement with plain HTML, CSS and JavaScript.
-
-## Future Ideas
-
-Possible extensions include:
-
-- automatic theme selection per email preview;
-- email-client compatibility previews;
-- printable event ticket mode;
-- calendar-file export;
-- configurable event data;
-- additional accessibility presets;
-- email template export;
-- MJML source variants for production email workflows.
+- front-end development
+- CRM / lifecycle communication
+- email UX
+- accessibility
+- campaign personalization
+- interaction design
+- responsive UI
+- lightweight product thinking
 
 ## Author
 
 **Laura Andreea**
 
-- GitHub: https://github.com/LaurAndreea10
-- Portfolio: https://laurandreea10.github.io/codepen-portfolio/
+GitHub: https://github.com/LaurAndreea10
 
-## License
+---
 
-This project is currently shared as a personal portfolio and CodePen Challenge project. No separate open-source license has been added yet.
+Built as a CodePen challenge concept and expanded into **Juniper Email Journey Studio 2.0**.
