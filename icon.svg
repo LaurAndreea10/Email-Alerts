@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Juniper Email Journey Studio">
+  <rect width="512" height="512" rx="112" fill="#2d4a3e"/>
+  <circle cx="256" cy="256" r="164" fill="#dce9e2" opacity=".12"/>
+  <path d="M132 188h248v160H132z" fill="none" stroke="#f7faf8" stroke-width="24" stroke-linejoin="round"/>
+  <path d="m146 206 110 86 110-86" fill="none" stroke="#f7faf8" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M255 128c-14 34-5 61 28 79-2-43 15-72 51-86-38-13-64-10-79 7Z" fill="#9fc8b2"/>
+</svg>
