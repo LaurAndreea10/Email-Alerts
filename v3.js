@@ -1,5 +1,45 @@
 (()=>{
 const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>[...r.querySelectorAll(s)];
+
+/* Entry language chooser -------------------------------------------------- */
+function createLanguageGate(){
+ const params=new URLSearchParams(location.search);
+ const explicit=params.get('lang');
+ if(explicit==='ro'||explicit==='en'){
+   localStorage.setItem('juniper-lang',explicit);
+   if(document.documentElement.lang!==explicit) setTimeout(()=>$('#languageBtn')?.click(),0);
+   return;
+ }
+ const style=document.createElement('style');
+ style.textContent=`
+ .language-gate{position:fixed;inset:0;z-index:5000;display:grid;place-items:center;padding:1rem;background:radial-gradient(circle at 20% 10%,rgba(151,184,167,.22),transparent 28%),rgba(10,18,14,.72);backdrop-filter:blur(18px)}
+ .language-gate[hidden]{display:none}.language-card{width:min(680px,100%);background:var(--surface);color:var(--text);border:1px solid var(--line);border-radius:28px;box-shadow:0 34px 100px rgba(0,0,0,.28);padding:clamp(1.4rem,4vw,2.4rem);text-align:center}
+ .language-symbol{width:64px;height:64px;margin:0 auto 1rem;border-radius:50%;display:grid;place-items:center;background:var(--brand);color:var(--surface);font-size:1.8rem}.language-card h2{font-family:Georgia,'Times New Roman',serif;font-size:clamp(2rem,6vw,3.3rem);line-height:1.05;margin:.4rem 0}.language-card p{color:var(--muted);max-width:52ch;margin:.8rem auto 1.5rem}.language-options{display:grid;grid-template-columns:1fr 1fr;gap:.8rem}.language-option{min-height:110px;border:1px solid var(--line);border-radius:18px;background:var(--surface2);color:var(--text);cursor:pointer;padding:1rem;display:grid;place-items:center;gap:.25rem;transition:.2s ease}.language-option:hover,.language-option:focus-visible{transform:translateY(-2px);border-color:var(--brand);box-shadow:0 12px 30px rgba(45,74,62,.12)}.language-option strong{font-size:1.15rem}.language-option span{font-size:.82rem;color:var(--muted)}.language-note{font-size:.78rem!important;margin:1rem auto 0!important}@media(max-width:520px){.language-options{grid-template-columns:1fr}.language-option{min-height:88px}}@media(prefers-reduced-motion:reduce){.language-option{transition:none}}
+ `;
+ document.head.appendChild(style);
+ const gate=document.createElement('div');
+ gate.className='language-gate';
+ gate.id='languageGate';
+ gate.setAttribute('role','dialog');
+ gate.setAttribute('aria-modal','true');
+ gate.setAttribute('aria-labelledby','languageGateTitle');
+ gate.innerHTML=`<div class="language-card"><div class="language-symbol" aria-hidden="true">❦</div><div class="eyebrow">WELCOME · BUN VENIT</div><h2 id="languageGateTitle">Choose your language<br><span lang="ro">Alege limba</span></h2><p>Select the language for the entire studio.<br><span lang="ro">Selectează limba pentru întreaga experiență.</span></p><div class="language-options"><button class="language-option" data-entry-lang="ro"><strong>🇷🇴 Română</strong><span>Continuă în limba română</span></button><button class="language-option" data-entry-lang="en"><strong>🇬🇧 English</strong><span>Continue in English</span></button></div><p class="language-note">You can change this later from the language button. · <span lang="ro">Poți schimba limba ulterior din butonul de limbă.</span></p></div>`;
+ document.body.appendChild(gate);
+ const rest=[...document.body.children].filter(el=>el!==gate&&el.tagName!=='SCRIPT');
+ rest.forEach(el=>el.inert=true);
+ function choose(lang){
+   localStorage.setItem('juniper-lang',lang);
+   if(document.documentElement.lang!==lang) $('#languageBtn')?.click();
+   rest.forEach(el=>el.inert=false);
+   gate.hidden=true;
+   const target=$('#studio')||$('#pageTitle');
+   setTimeout(()=>target?.focus?.({preventScroll:true}),0);
+ }
+ gate.querySelectorAll('[data-entry-lang]').forEach(btn=>btn.addEventListener('click',()=>choose(btn.dataset.entryLang)));
+ setTimeout(()=>gate.querySelector('[data-entry-lang="ro"]')?.focus(),20);
+}
+createLanguageGate();
+
 const clients={gmail:{name:'Gmail',className:'gmail'},outlook:{name:'Outlook',className:'outlook'},apple:{name:'Apple Mail',className:'apple'}};
 const audience=[
 {name:'Alex Morgan',segment:'VIP',rsvp:'Confirmed',journey:'Confirmation'},
