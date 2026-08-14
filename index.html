@@ -5,18 +5,20 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#e8efeb">
 <meta name="color-scheme" content="light dark">
-<meta name="description" content="Juniper Email Journey Studio — accessible bilingual email campaign experience builder with inbox previews, personalization, analytics and exports.">
+<meta name="description" content="Juniper Email Journey Studio 3.0 — accessible bilingual email campaign studio with client previews, visual block editor, CRM simulation, analytics and version history.">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="icon" href="icon.svg" type="image/svg+xml">
-<title>Juniper Email Journey Studio</title>
+<title>Juniper Email Journey Studio 3.0</title>
 <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="v3.css">
 </head>
 <body>
 <a class="skip" href="#studio">Skip to studio / Sari la studio</a>
 <div id="live" class="sr-only" aria-live="polite"></div>
 <header class="topbar"><div class="topbar-inner">
-  <div class="brand"><div class="brand-mark" aria-hidden="true">❦</div><span>Juniper Email Journey Studio</span></div>
+  <div class="brand"><div class="brand-mark" aria-hidden="true">❦</div><span>Juniper Email Journey Studio</span><span class="version-pill">v3.0</span></div>
   <div class="top-actions">
+    <a class="btn small hide-mobile" href="#versionHistory">History</a>
     <button class="btn small" id="languageBtn" aria-label="Change language">RO</button>
     <button class="icon-btn" id="themeBtn" aria-label="Toggle dark mode" title="Dark mode">◐</button>
     <button class="btn small hide-mobile" id="accessBtn">Accessibility</button>
@@ -25,8 +27,8 @@
   </div>
 </div></header>
 <section class="hero" aria-labelledby="pageTitle">
-  <div><div class="eyebrow" data-i18n="eyebrow">Accessible campaign experience builder</div><h1 id="pageTitle">Juniper Email Journey Studio</h1><p data-i18n="heroText">Design, preview and experience a complete accessible email journey across confirmation, reminder and follow-up stages.</p></div>
-  <div class="hero-stats" aria-label="Project highlights"><div class="stat"><strong>3</strong><span data-i18n="statEmails">email stages</span></div><div class="stat"><strong>2</strong><span data-i18n="statLang">languages</span></div><div class="stat"><strong>AA+</strong><span data-i18n="statA11y">accessibility focus</span></div></div>
+  <div><div class="eyebrow" data-i18n="eyebrow">Accessible campaign experience builder</div><h1 id="pageTitle">Juniper Email Journey Studio</h1><p data-i18n="heroText">Design, preview and experience a complete accessible email journey across confirmation, reminder and follow-up stages.</p><div class="v3-callout"><strong>3.0</strong><span>Email client lab · Visual block editor · CRM campaign desk · Version history</span></div></div>
+  <div class="hero-stats" aria-label="Project highlights"><div class="stat"><strong>4</strong><span data-i18n="statEmails">email stages</span></div><div class="stat"><strong>2</strong><span data-i18n="statLang">languages</span></div><div class="stat"><strong>AA+</strong><span data-i18n="statA11y">accessibility focus</span></div></div>
 </section>
 <main id="studio" class="app">
 <aside class="panel left-panel" id="leftPanel" aria-label="Campaign controls">
@@ -55,7 +57,7 @@
     <article class="email" id="emailCard" aria-labelledby="emailTitle">
       <div class="variant-banner"><span id="variantLabel">Variant A · Elegant</span><span id="stageLabel">Confirmation</span></div>
       <div class="email-head"><div class="eyebrow">CREATOR SOCIAL · EMAIL EXPERIENCE</div><div class="logo">Juniper's Tea Room</div></div>
-      <div class="email-body">
+      <div class="email-body" id="editableEmailBody">
         <span class="status" id="statusBadge">✓ YOU'RE CONFIRMED</span>
         <h2 id="emailTitle">Your place is waiting, <span data-bind="name">Alex Morgan</span>.</h2>
         <p id="introCopy">A thoughtful afternoon of conversation, creative exchange and tea is now on your calendar.</p>
@@ -75,9 +77,56 @@
   <div class="panel-section"><h3 data-i18n="shortcuts">Keyboard shortcuts</h3><p style="font-size:.82rem;color:var(--muted)"><span class="kbd">1–4</span> stages · <span class="kbd">D</span> dark · <span class="kbd">L</span> language · <span class="kbd">+</span>/<span class="kbd">−</span> text · <span class="kbd">Ctrl/⌘ K</span> commands</p></div>
 </aside>
 </main>
-<footer class="footer">Built as an accessible, bilingual, progressively enhanced email campaign experience. Works without external libraries.</footer>
+
+<section class="v3-shell" id="v3Lab" aria-labelledby="v3Title">
+  <div class="v3-heading"><div><div class="eyebrow">VERSION 3.0 LAB</div><h2 id="v3Title">Campaign production workspace</h2><p>Test how the campaign feels in different inboxes, rearrange content blocks, and simulate CRM delivery — without leaving the demo.</p></div><span class="version-pill large">Current · 3.0</span></div>
+
+  <section class="v3-card client-lab" aria-labelledby="clientLabTitle">
+    <div class="v3-card-head"><div><span class="mini-label">01 · CLIENT LAB</span><h3 id="clientLabTitle">Gmail · Outlook · Apple Mail</h3></div><div class="segmented" role="group" aria-label="Email client preview"><button class="client-btn active" data-client="gmail">Gmail</button><button class="client-btn" data-client="outlook">Outlook</button><button class="client-btn" data-client="apple">Apple Mail</button></div></div>
+    <div class="client-preview gmail" id="clientPreview">
+      <div class="client-chrome"><span class="window-dot"></span><span class="window-dot"></span><span class="window-dot"></span><strong id="clientName">Gmail</strong><span class="client-address">Inbox · Juniper's Tea Room</span></div>
+      <div class="client-mail"><div class="client-sidebar" aria-hidden="true"><span class="compose">＋</span><span>▰</span><span>☆</span><span>◷</span></div><div class="client-message"><div class="client-meta"><strong>Juniper's Tea Room</strong><span>&lt;hello@juniper.demo&gt;</span><time>10:42</time></div><h4 id="clientSubject">You're confirmed, Alex</h4><p id="clientSnippet">Your Creator Social place is reserved.</p><div class="mini-email" id="clientEmailMirror"></div></div></div>
+    </div>
+  </section>
+
+  <div class="v3-grid">
+    <section class="v3-card" aria-labelledby="blockEditorTitle">
+      <div class="v3-card-head"><div><span class="mini-label">02 · VISUAL EDITOR</span><h3 id="blockEditorTitle">Drag-and-drop email blocks</h3></div><button class="btn small" id="resetBlocks">Reset order</button></div>
+      <p class="v3-help">Drag with a pointer or use ↑ / ↓ for keyboard-friendly reordering.</p>
+      <div class="block-list" id="blockList" aria-label="Email content block order">
+        <article class="block-item" draggable="true" data-block="status"><span class="drag" aria-hidden="true">⠿</span><div><strong>Status badge</strong><small>Confirmation / reminder state</small></div><div class="block-actions"><button aria-label="Move status badge up" data-move="up">↑</button><button aria-label="Move status badge down" data-move="down">↓</button></div></article>
+        <article class="block-item" draggable="true" data-block="headline"><span class="drag" aria-hidden="true">⠿</span><div><strong>Headline + intro</strong><small>Primary message hierarchy</small></div><div class="block-actions"><button aria-label="Move headline up" data-move="up">↑</button><button aria-label="Move headline down" data-move="down">↓</button></div></article>
+        <article class="block-item" draggable="true" data-block="ticket"><span class="drag" aria-hidden="true">⠿</span><div><strong>Event ticket</strong><small>Date, location and RSVP</small></div><div class="block-actions"><button aria-label="Move event ticket up" data-move="up">↑</button><button aria-label="Move event ticket down" data-move="down">↓</button></div></article>
+        <article class="block-item" draggable="true" data-block="perk"><span class="drag" aria-hidden="true">⠿</span><div><strong>Creator perk</strong><small>Promo code and contextual copy</small></div><div class="block-actions"><button aria-label="Move creator perk up" data-move="up">↑</button><button aria-label="Move creator perk down" data-move="down">↓</button></div></article>
+        <article class="block-item" draggable="true" data-block="cta"><span class="drag" aria-hidden="true">⠿</span><div><strong>Primary CTA</strong><small>Calendar / details / feedback</small></div><div class="block-actions"><button aria-label="Move primary CTA up" data-move="up">↑</button><button aria-label="Move primary CTA down" data-move="down">↓</button></div></article>
+      </div>
+      <div class="editor-summary"><strong>Saved locally</strong><span id="blockOrderText">status → headline → ticket → perk → cta</span></div>
+    </section>
+
+    <section class="v3-card" aria-labelledby="crmTitle">
+      <div class="v3-card-head"><div><span class="mini-label">03 · CRM DESK</span><h3 id="crmTitle">Audience & delivery simulation</h3></div><button class="btn small primary" id="simulateSend">Run campaign</button></div>
+      <div class="crm-kpis"><div><strong id="crmContacts">248</strong><span>contacts</span></div><div><strong id="crmDelivered">0</strong><span>delivered</span></div><div><strong id="crmOpened">0</strong><span>opened</span></div><div><strong id="crmClicked">0</strong><span>clicked</span></div></div>
+      <div class="crm-toolbar"><input id="crmSearch" type="search" placeholder="Search audience" aria-label="Search audience"><select id="crmFilter" aria-label="Filter audience"><option value="all">All contacts</option><option value="vip">VIP</option><option value="creator">Creators</option><option value="pending">Pending RSVP</option></select></div>
+      <div class="crm-table-wrap"><table class="crm-table"><thead><tr><th>Name</th><th>Segment</th><th>RSVP</th><th>Journey</th></tr></thead><tbody id="crmRows"></tbody></table></div>
+      <div class="delivery-log" id="deliveryLog" aria-live="polite">Campaign ready. No simulated send has been run yet.</div>
+    </section>
+  </div>
+
+  <section class="v3-card version-history" id="versionHistory" aria-labelledby="historyTitle">
+    <div class="v3-card-head"><div><span class="mini-label">PROJECT EVOLUTION</span><h3 id="historyTitle">Version history</h3></div><a class="btn small" href="CHANGELOG.md">Open full changelog</a></div>
+    <div class="version-track">
+      <article class="version-item current"><span class="version-number">3.0</span><div><strong>Campaign Production Studio</strong><time datetime="2026-08-14">14 Aug 2026</time><p>Email-client previews, visual block editor, CRM simulation and in-app history.</p></div><span class="version-state">Current</span></article>
+      <article class="version-item"><span class="version-number">2.0</span><div><strong>Accessible Journey Studio</strong><time datetime="2026-08-14">14 Aug 2026</time><p>Responsive previews, personalization, analytics, A/B variants, accessibility profiles, export and PWA.</p></div><a href="https://github.com/LaurAndreea10/Email-Alerts/commit/d4acc46ff84c1299beae812926f05c3728e73535">View commit</a></article>
+      <article class="version-item"><span class="version-number">1.0</span><div><strong>Accessible Email Journey</strong><time datetime="2026-08-14">14 Aug 2026</time><p>Browser-ready confirmation, reminder and thank-you journey with RO/EN, dark mode and accessibility controls.</p></div><a href="https://github.com/LaurAndreea10/Email-Alerts/commit/5c6e6a42f15903e7b9930d4afad6d8f493ffc3d9">View commit</a></article>
+      <article class="version-item origin"><span class="version-number">0.x</span><div><strong>Original MJML concept</strong><time datetime="2026-08-13">13 Aug 2026</time><p>The initial Creator Social email journey and visual direction that started the project.</p></div><span class="version-state">Origin</span></article>
+    </div>
+  </section>
+</section>
+
+<footer class="footer">Juniper Email Journey Studio <strong>3.0</strong> · Accessible, bilingual and progressively enhanced · <a href="#versionHistory">Version history</a></footer>
 <div class="command" id="command" role="dialog" aria-modal="true" aria-label="Command palette"><div class="command-box"><input id="commandSearch" placeholder="Type a command…" aria-label="Search commands"><div class="command-list" id="commandList"></div></div></div>
 <div class="onboarding" id="onboarding" role="dialog" aria-modal="true" aria-labelledby="onboardTitle"><div class="onboarding-card"><div class="eyebrow">ACCESSIBILITY FIRST</div><h2 id="onboardTitle">Customize your viewing experience</h2><p>Choose a preset now, or continue with the default experience. You can change these settings anytime.</p><div class="preset-grid"><button class="preset" data-onboard="default"><strong>Default</strong><span>Balanced visual experience</span></button><button class="preset" data-onboard="lowvision"><strong>Low vision</strong><span>Larger text + high contrast</span></button><button class="preset" data-onboard="readable"><strong>Dyslexia-friendly</strong><span>Readable font + wider spacing</span></button><button class="preset" data-onboard="motion"><strong>Reduced motion</strong><span>Removes transitions and animation</span></button></div><button class="btn ghost" id="skipOnboarding" style="margin-top:1rem">Continue without changes</button></div></div>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 <script src="app.js" defer></script>
+<script src="v3.js" defer></script>
 </body></html>
