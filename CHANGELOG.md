@@ -2,6 +2,21 @@
 
 All notable stages of **Juniper Email Journey Studio / Email Alerts** are documented here so the project evolution remains visible as new versions are added.
 
+## [3.1] — 2026-08-14
+
+### Language-first entry experience
+
+Added:
+
+- bilingual language chooser shown when opening the normal public link
+- prominent **Română / English** entry options before entering the studio
+- accessible modal semantics with initial keyboard focus
+- temporary focus isolation of the page while the language dialog is open
+- selected language persisted through the existing `juniper-lang` preference
+- direct `?lang=ro` and `?lang=en` links bypass the chooser and open directly in that language
+- users can still change language later from the existing language control
+- responsive language chooser layout and reduced-motion support
+
 ## [3.0] — 2026-08-14
 
 ### Campaign Production Studio
@@ -101,6 +116,6 @@ Major versions represent a meaningful product-stage change:
 
 - **1.x** — accessible email showcase
 - **2.x** — interactive campaign experience builder
-- **3.x** — campaign production studio and CRM simulation
+- **3.x** — campaign production studio, CRM simulation and entry-experience refinements
 
 Future changes should be appended here instead of overwriting the history of earlier stages.
